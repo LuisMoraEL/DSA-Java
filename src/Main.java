@@ -1,5 +1,11 @@
+import datastructures.linkedlist.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hola mundo");
+        LinkedList myLL = new LinkedList(4);
+
+        myLL.printHead();
+        myLL.printTail();
+        myLL.printLength();
     }
 }
