@@ -1,4 +1,4 @@
-package datastructures.node;
+package data;
 
 public class Node {
     public int value;

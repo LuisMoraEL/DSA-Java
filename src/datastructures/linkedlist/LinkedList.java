@@ -2,7 +2,7 @@ package datastructures.linkedlist;
 
 import java.util.HashSet;
 import java.util.Set;
-import datastructures.node.Node; // not use prev value
+import data.Node; // not use prev value
 
 public class LinkedList {
     private Node head;
