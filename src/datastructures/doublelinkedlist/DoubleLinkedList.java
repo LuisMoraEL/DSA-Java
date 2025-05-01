@@ -16,6 +16,47 @@ public class DoubleLinkedList {
         ++length;
     }
 
+    public void swapPairs() {
+        if (length <= 1) return;
+        Node current = head;
+        do {
+            Node temp = current.next;
+            current.next = current.prev;
+            current.prev = temp;
+            current = temp;
+        } while (current != null);
+    }
+
+    public boolean isPalindrome() {
+        if (length < 2) return true;
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node left = slow.prev;
+        Node right = (length % 2 == 0) ? slow : slow.next;
+        while (left != null && right != null) {
+            if (left.value != right.value) return false;
+            left = left.prev;
+            right = right.next;
+        }
+        return true;
+    }
+
+    public void reverse() {
+        if (length < 2) return;
+        Node current = head;
+        head = tail;
+        tail = current;
+        while (current != null) {
+            Node temp = current.next;
+            current.next = current.prev;
+            current.prev = temp;
+            current = temp;
+        }
+    }
+
     public void swapFirstLast() {
         if (length < 2) return;
         int temp = head.value;
