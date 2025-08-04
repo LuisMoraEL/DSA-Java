@@ -1,12 +1,23 @@
-import datastructures.queue.Queue;
-import datastructures.stack.Stack;
+import datastructures.bst.BinarySearchTree;
 
 public class Main {
     public static void main(String[] args) {
-        Queue myQueue = new Queue(1);
-        myQueue.enqueue(2);
-        myQueue.enqueue(3);
-        myQueue.dequeue();
-        myQueue.printAll();
+        BinarySearchTree myBST = new BinarySearchTree();
+
+        myBST.insert(47);
+        myBST.insert(21);
+        myBST.insert(76);
+        myBST.insert(18);
+        myBST.insert(52);
+        myBST.insert(82);
+
+        myBST.insert(27);
+
+        System.out.println(myBST.root.left.right.value);
+        int cvalue = 30;
+        System.out.println("Contains (" + cvalue + ") -> " + myBST.contains(cvalue));
+        System.out.println(myBST.insert(30));
+        System.out.println("Contains (" + cvalue + ") -> " + myBST.contains(cvalue));
+
     }
 }
