@@ -1,23 +1,22 @@
-import datastructures.bst.BinarySearchTree;
+import datastructures.graph.Graph;
 
 public class Main {
     public static void main(String[] args) {
-        BinarySearchTree myBST = new BinarySearchTree();
+        Graph myGraph = new Graph();
 
-        myBST.insert(47);
-        myBST.insert(21);
-        myBST.insert(76);
-        myBST.insert(18);
-        myBST.insert(52);
-        myBST.insert(82);
+        myGraph.addVertex("A");
+        myGraph.addVertex("B");
+        myGraph.addVertex("C");
+        myGraph.addVertex("D");
 
-        myBST.insert(27);
+        myGraph.addEdge("A", "B");
+        myGraph.addEdge("B", "D");
+        myGraph.addEdge("D", "A");
+        myGraph.addEdge("D", "C");
+        myGraph.addEdge("A", "C");
 
-        System.out.println(myBST.root.left.right.value);
-        int cvalue = 30;
-        System.out.println("Contains (" + cvalue + ") -> " + myBST.contains(cvalue));
-        System.out.println(myBST.insert(30));
-        System.out.println("Contains (" + cvalue + ") -> " + myBST.contains(cvalue));
-
+        myGraph.printGraph();
+        myGraph.removeVertex("D");
+        myGraph.printGraph();
     }
 }
